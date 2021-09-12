@@ -10,7 +10,7 @@
     <link rel="stylesheet" href='https://devcat-jp.github.io/css/light.css' />
     <link rel="stylesheet" href='https://devcat-jp.github.io/css/dark.css' />
     <link rel="stylesheet" href='https://devcat-jp.github.io/css/syntax.css' />
-    <title>投稿練習 - でぶねこ</title>
+    <title>picoの開発環境構築 - でぶねこ</title>
     
     <link rel="icon" type="image/x-icon" href='/images/github.png'>
     
@@ -18,17 +18,17 @@
 
     
     <meta name="description"
-  content="概要欄" />
+  content="WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う" />
 <meta name="keywords"
   content='' />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://devcat-jp.github.io/post/test_post/" />
+<link rel="canonical" href="https://devcat-jp.github.io/post/pi_pico_devenv_wsl/" />
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="投稿練習 - でぶねこ" />
+<meta name="twitter:title" content="picoの開発環境構築 - でぶねこ" />
 <meta name="twitter:description"
-  content="概要欄" />
+  content="WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う" />
 <meta name="twitter:site" content="https://devcat-jp.github.io/" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image"
@@ -36,17 +36,17 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="投稿練習 - でぶねこ">
+<meta property="og:title" content="picoの開発環境構築 - でぶねこ">
 <meta property="og:description"
-  content="概要欄" />
-<meta property="og:url" content="https://devcat-jp.github.io/post/test_post/" />
-<meta property="og:site_name" content="投稿練習" />
+  content="WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う" />
+<meta property="og:url" content="https://devcat-jp.github.io/post/pi_pico_devenv_wsl/" />
+<meta property="og:site_name" content="picoの開発環境構築" />
 <meta property="og:image"
   content="https://devcat-jp.github.io/">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2021-09-12 13:59:18 &#43;0900 JST" />
+<meta property="article:published_time" content="2021-09-12 15:31:32 &#43;0900 JST" />
 
 
 
@@ -143,18 +143,18 @@
                   <span class="author">
                     <a href="https://devcat-jp.github.io/">devcat</a></span><span
                     class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
-                      href="https://devcat-jp.github.io/post/test_post/">投稿練習</a></strong>
+                      href="https://devcat-jp.github.io/post/pi_pico_devenv_wsl/">picoの開発環境構築</a></strong>
                 </h1>
                 <div class="note m-0">
-                  Created <relative-time datetime="Sun, 12 Sep 2021 13:59:18 &#43;0900"
+                  Created <relative-time datetime="Sun, 12 Sep 2021 15:31:32 &#43;0900"
                     class="no-wrap">
-                    Sun, 12 Sep 2021 13:59:18 &#43;0900</relative-time>
+                    Sun, 12 Sep 2021 15:31:32 &#43;0900</relative-time>
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sun, 12 Sep 2021 15:35:40 &#43;0900"
+                  Modified <relative-time datetime="Sun, 12 Sep 2021 16:52:07 &#43;0900"
                     class="no-wrap">
-                    Sun, 12 Sep 2021 15:35:40 &#43;0900</relative-time>
+                    Sun, 12 Sep 2021 16:52:07 &#43;0900</relative-time>
                   
                 </div>
               </div>
@@ -178,11 +178,31 @@
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          6 Words
+                          365 Words
                     
 
                   </div>
                   <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/raspberry-pi">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Raspberry Pi
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/pico">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      pico
+                    </a>
+                    
                     
                   </div>
                 </div>
@@ -190,8 +210,46 @@
 
 
               <div class="Box-body px-5 pb-5">
-                <article class="markdown-body entry-content container-lg"><p>使用テーマ<br>
-<a href="https://themes.gohugo.io/themes/github-style/#setup-readme">https://themes.gohugo.io/themes/github-style/#setup-readme</a></p>
+                <article class="markdown-body entry-content container-lg"><h2 id="使用環境">使用環境</h2>
+<ul>
+<li>Win10 Pro</li>
+<li>WSL2 + Ubuntu20.04</li>
+<li>VScode</li>
+</ul>
+<h2 id="環境構築手順">環境構築手順</h2>
+<p>1.Ubuntu20.04に必要なパッケージのインストール</p>
+<pre tabindex="0"><code>$ sudo apt update
+$ sudo apt install build-essential cmake gcc-arm-none-eabi git curl
+</code></pre><p>2.pico-sdkのインストール</p>
+<pre tabindex="0"><code>$ mkdir ~/pico
+$ cd ~/pico
+$ git clone https://github.com/raspberrypi/pico-sdk
+</code></pre><p>3.pico-sdkのパス通し</p>
+<pre tabindex="0"><code>$ echo export PICO_SDK_PATH=~/pico/pico-sdk &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</code></pre><p>4.picoサンプルの入手</p>
+<pre tabindex="0"><code>$ cd ~/pico
+$ git clone https://github.com/raspberrypi/pico-examples
+</code></pre><p>5.Lチカサンプル（blink）のビルド</p>
+<pre tabindex="0"><code>
+$ cd ~/pico/pico-examples
+$ mkdir build
+$ cd build
+$ cmake ..
+　　成功すると末尾に以下のような表示
+　　-- Configuring done
+　　-- Generating done
+　　-- Build files have been written to: 作業パス
+$ cd blink
+$ make
+$ ls | grep blink.uf2
+    blink.uf2
+</code></pre><p>6．生成プログラムのコピー<br>
+pico本体の「BOOTSEL」を押下しながらWinPCとUSBケーブルで接続する。<br>
+するとUSBストレージとして認識されるので先ほどの「blink.uf2」をコピーする</p>
+<p>7.実行<br>
+コピーした段階で自動的に実行開始する<br>
+正しく作業できていた場合はpico本体のLEDがチカチカしているのを確認できるはず</p>
 </article>
               </div>
             </div>
@@ -216,7 +274,7 @@
 
  const tippyInstance = tippy('#toc-toggle', {
   trigger: 'click',
-  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\u003c\/nav\u003e</div>',
+  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\u0022#使用環境\u0022\u003e使用環境\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#環境構築手順\u0022\u003e環境構築手順\u003c\/a\u003e\u003c\/li\u003e\n  \u003c\/ul\u003e\n\u003c\/nav\u003e</div>',
   allowHTML: true,
   placement: 'bottom-start',
   interactive: true,

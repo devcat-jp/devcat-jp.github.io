@@ -6,14 +6,23 @@
     <description>Recent content on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 12 Sep 2021 13:59:18 +0900</lastBuildDate><atom:link href="https://devcat-jp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat-jp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoの開発環境構築</title>
+      <link>https://devcat-jp.github.io/post/pi_pico_devenv_wsl/</link>
+      <pubDate>Sun, 12 Sep 2021 15:31:32 +0900</pubDate>
+      
+      <guid>https://devcat-jp.github.io/post/pi_pico_devenv_wsl/</guid>
+      <description>WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う</description>
+    </item>
+    
     <item>
       <title>投稿練習</title>
       <link>https://devcat-jp.github.io/post/test_post/</link>
       <pubDate>Sun, 12 Sep 2021 13:59:18 +0900</pubDate>
       
       <guid>https://devcat-jp.github.io/post/test_post/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;概要記載欄&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>概要欄</description>
     </item>
     
     <item>
