@@ -1,6 +1,7 @@
 baseURL = 'https://devcat-jp.github.io/'
 languageCode = 'jp'
 title = 'でぶねこ'
+publishDir = "docs"
 theme = "github-style"
 
 [params]
