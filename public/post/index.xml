@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on でぶねこ</title>
+    <link>https://devcat-jp.github.io/post/</link>
+    <description>Recent content in Posts on でぶねこ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 12 Sep 2021 13:59:18 +0900</lastBuildDate><atom:link href="https://devcat-jp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>投稿練習</title>
+      <link>https://devcat-jp.github.io/post/test_post/</link>
+      <pubDate>Sun, 12 Sep 2021 13:59:18 +0900</pubDate>
+      
+      <guid>https://devcat-jp.github.io/post/test_post/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;概要記載欄&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
