@@ -8,7 +8,7 @@
     <language>jp</language>
     <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat-jp.github.io/tags/pico/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>picoの開発環境構築</title>
+      <title>picoのC/C&#43;&#43;開発環境構築</title>
       <link>https://devcat-jp.github.io/post/pi_pico_devenv_wsl/</link>
       <pubDate>Sun, 12 Sep 2021 15:31:32 +0900</pubDate>
       
