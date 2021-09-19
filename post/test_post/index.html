@@ -152,9 +152,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sun, 12 Sep 2021 15:35:40 &#43;0900"
+                  Modified <relative-time datetime="Sun, 19 Sep 2021 10:59:46 &#43;0900"
                     class="no-wrap">
-                    Sun, 12 Sep 2021 15:35:40 &#43;0900</relative-time>
+                    Sun, 19 Sep 2021 10:59:46 &#43;0900</relative-time>
                   
                 </div>
               </div>
@@ -178,7 +178,7 @@
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          6 Words
+                          45 Words
                     
 
                   </div>
@@ -190,8 +190,16 @@
 
 
               <div class="Box-body px-5 pb-5">
-                <article class="markdown-body entry-content container-lg"><p>使用テーマ<br>
-<a href="https://themes.gohugo.io/themes/github-style/#setup-readme">https://themes.gohugo.io/themes/github-style/#setup-readme</a></p>
+                <article class="markdown-body entry-content container-lg"><h3 id="使用テーマ">使用テーマ</h3>
+<pre tabindex="0"><code>https://themes.gohugo.io/themes/github-style/#setup-readme
+</code></pre><h3 id="新規記事作成">新規記事作成</h3>
+<pre tabindex="0"><code>$ hugo new post/title_of_the_post.md
+</code></pre><h3 id="静的ページ作成">静的ページ作成</h3>
+<pre tabindex="0"><code>$ hugo
+</code></pre><h3 id="hugoサーバ立ち上げ">Hugoサーバ立ち上げ</h3>
+<p>$hogo server</p>
+<h3 id="画像貼り付け">画像貼り付け</h3>
+<p><a href="https://hugo-de-blog.com/hugo-img/">https://hugo-de-blog.com/hugo-img/</a></p>
 </article>
               </div>
             </div>
@@ -216,7 +224,7 @@
 
  const tippyInstance = tippy('#toc-toggle', {
   trigger: 'click',
-  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\u003c\/nav\u003e</div>',
+  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#使用テーマ\u0022\u003e使用テーマ\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#新規記事作成\u0022\u003e新規記事作成\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#静的ページ作成\u0022\u003e静的ページ作成\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#hugoサーバ立ち上げ\u0022\u003eHugoサーバ立ち上げ\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#画像貼り付け\u0022\u003e画像貼り付け\u003c\/a\u003e\u003c\/li\u003e\n      \u003c\/ul\u003e\n    \u003c\/li\u003e\n  \u003c\/ul\u003e\n\u003c\/nav\u003e</div>',
   allowHTML: true,
   placement: 'bottom-start',
   interactive: true,
