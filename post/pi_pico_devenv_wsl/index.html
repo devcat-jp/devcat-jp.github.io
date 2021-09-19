@@ -152,9 +152,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Mon, 13 Sep 2021 21:30:39 &#43;0900"
+                  Modified <relative-time datetime="Sun, 19 Sep 2021 14:08:17 &#43;0900"
                     class="no-wrap">
-                    Mon, 13 Sep 2021 21:30:39 &#43;0900</relative-time>
+                    Sun, 19 Sep 2021 14:08:17 &#43;0900</relative-time>
                   
                 </div>
               </div>
@@ -178,7 +178,7 @@
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          365 Words
+                          373 Words
                     
 
                   </div>
@@ -224,6 +224,8 @@ $ sudo apt install build-essential cmake gcc-arm-none-eabi git curl
 <pre tabindex="0"><code>$ mkdir ~/pico
 $ cd ~/pico
 $ git clone https://github.com/raspberrypi/pico-sdk
+$ cd ~/pico/pico-sdk
+$ git submodule update --init
 </code></pre><p>3.pico-sdkのパス通し</p>
 <pre tabindex="0"><code>$ echo export PICO_SDK_PATH=~/pico/pico-sdk &gt;&gt; ~/.bashrc
 $ source ~/.bashrc
