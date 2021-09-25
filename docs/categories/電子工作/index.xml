@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raspberry Pi on でぶねこ</title>
-    <link>https://devcat.jp/tags/raspberry-pi/</link>
-    <description>Recent content in Raspberry Pi on でぶねこ</description>
+    <title>電子工作 on でぶねこ</title>
+    <link>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</link>
+    <description>Recent content in 電子工作 on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>picoのC/C&#43;&#43;開発環境構築</title>
       <link>https://devcat.jp/post/pi_pico_devenv_wsl/</link>

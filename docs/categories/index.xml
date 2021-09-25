@@ -2,9 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on でぶねこ</title>
-    <link>https://devcat-jp.github.io/categories/</link>
+    <link>https://devcat.jp/categories/</link>
     <description>Recent content in Categories on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language><atom:link href="https://devcat-jp.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>jp</language>
+    <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>電子工作</title>
+      <link>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Sun, 12 Sep 2021 15:31:32 +0900</pubDate>
+      
+      <guid>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

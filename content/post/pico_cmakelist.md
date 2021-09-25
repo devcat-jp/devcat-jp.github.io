@@ -1,7 +1,7 @@
 ---
 title: "Picoのcmakelistメモ"
 date: 2021-09-19T15:11:12+09:00
-draft: false
+draft: true
 summary: "CMakelistのフラグとかの情報をメモ"
 tags: [Raspberry Pi, pico]
 ---
