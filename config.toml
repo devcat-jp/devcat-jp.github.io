@@ -1,33 +1,79 @@
-baseURL = 'https://devcat-jp.github.io/'
-languageCode = 'jp'
-title = 'でぶねこ'
-theme = "github-style"
+baseurl = "https://devcat.jp"
+title = "でぶねこ"
+languageCode = "jp"
+paginate = "10" # Number of posts per page
+theme = "mainroad"
 publishDir = "docs"
 canonifyurls = true
+disqusShortname = "" # Enable Disqus comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
-[params]
-  author = "devcat"
-  description = "アウトプットって大事だよね"
+[Author] # Used in authorbox
+  name = "devcat"
+  bio = ""
+  avatar = "img/avatar.png"
+
+[Params]
+  subtitle = "アウトプットって大事だよね" # Deprecated in favor of .Site.Params.logo.subtitle
+  description = "" # Site description. Used in meta description
+  copyright = "devcat" # Footer copyright holder, otherwise will use site title
+  opengraph = true # Enable OpenGraph if true
+  schema = true # Enable Schema
+  twitter_cards = false # Enable Twitter Cards if true
+  readmore = false # Show "Read more" button in list if true
+  authorbox = true # Show authorbox at bottom of pages if true
+  toc = true # Enable Table of Contents
+  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
+  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
+  mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
+  dateformat = "2006-01-02" # Change the format of dates
+  mathjax = true # Enable MathJax
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
+
+[Params.style.vars]
+  highlightColor = "#e22d30" # Override highlight color
+
+  # Override font-family sets. Secondary font-family set responsible for pre, code, kbd, and samp tags font
+  # Take care of different quotes OR escaping symbols in these params if necessary
+  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
+  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+[Params.logo]
+  image = "img/title.png"
+  title = "でぶねこ"
+  subtitle = "アウトプットって大事だよね"
+
+[Params.thumbnail]
+  visibility = ["list", "post"] # Control thumbnail visibility
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = false # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  # alternatively "ddg-search" can be used, to search via DuckDuckGo
+  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  categories_counter = false # Enable counter for each category in "Categories" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  #facebook = "username"
+  #twitter = "username"
+  #instagram = "username"
+  #linkedin = "username"
+  #telegram = "username"
   github = "devcat-jp"
-  email = "null"
-  url = "https://devcat-jp.github.io/"
-  keywords = ""
-  rss = true
-  lastmod = true
-  userStatusEmoji = "😀"
-  favicon = "/images/github.png"
-  location = "Japan"
+  #gitlab = "username"
+  #bitbucket = "username"
+  #email = "example@example.com"
 
-  [[params.links]]
-    title = "Link"
-    href = "https://devcat-jp.github.io/"
-  [[params.links]]
-    title = "Link2"
-    href = "https://devcat-jp.github.io/"
-    icon = "images/avatar.png"
-
-[frontmatter]
-  lastmod = ["lastmod", ":fileModTime", ":default"]
-
-[taxonomies]
-  tag = "tags"
