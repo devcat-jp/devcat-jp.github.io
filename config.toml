@@ -3,6 +3,7 @@ languageCode = 'jp'
 title = 'でぶねこ'
 theme = "github-style"
 publishDir = "docs"
+canonifyurls = true
 
 [params]
   author = "devcat"
