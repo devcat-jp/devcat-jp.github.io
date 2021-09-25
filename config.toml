@@ -1,0 +1,32 @@
+baseURL = 'https://devcat-jp.github.io/'
+languageCode = 'jp'
+title = 'でぶねこ'
+theme = "github-style"
+publishDir = "docs"
+
+[params]
+  author = "devcat"
+  description = "アウトプットって大事だよね"
+  github = "devcat-jp"
+  email = "null"
+  url = "https://devcat-jp.github.io/"
+  keywords = ""
+  rss = true
+  lastmod = true
+  userStatusEmoji = "😀"
+  favicon = "/images/github.png"
+  location = "Japan"
+
+  [[params.links]]
+    title = "Link"
+    href = "https://devcat-jp.github.io/"
+  [[params.links]]
+    title = "Link2"
+    href = "https://devcat-jp.github.io/"
+    icon = "images/avatar.png"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[taxonomies]
+  tag = "tags"
