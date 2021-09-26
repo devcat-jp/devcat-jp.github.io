@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>picoのC/C&#43;&#43;開発環境構築 - でぶねこ</title>
+	<title>picoの新しいプロジェクト作成 - でぶねこ</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="picoのC/C&#43;&#43;開発環境構築" />
-<meta property="og:description" content="WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う" />
+		<meta property="og:title" content="picoの新しいプロジェクト作成" />
+<meta property="og:description" content="自分で用意したフォルダでpicoのプロジェクト作成する手法を整理" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devcat.jp/post/pi_pico_devenv_wsl/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-12T15:31:32+09:00" />
-<meta property="article:modified_time" content="2021-09-12T15:31:32+09:00" />
+<meta property="og:url" content="https://devcat.jp/post/pico_new_project/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-26T11:00:53+09:00" />
+<meta property="article:modified_time" content="2021-09-26T11:00:53+09:00" />
 
 
-		<meta itemprop="name" content="picoのC/C&#43;&#43;開発環境構築">
-<meta itemprop="description" content="WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う"><meta itemprop="datePublished" content="2021-09-12T15:31:32+09:00" />
-<meta itemprop="dateModified" content="2021-09-12T15:31:32+09:00" />
-<meta itemprop="wordCount" content="109">
+		<meta itemprop="name" content="picoの新しいプロジェクト作成">
+<meta itemprop="description" content="自分で用意したフォルダでpicoのプロジェクト作成する手法を整理"><meta itemprop="datePublished" content="2021-09-26T11:00:53+09:00" />
+<meta itemprop="dateModified" content="2021-09-26T11:00:53+09:00" />
+<meta itemprop="wordCount" content="182">
 <meta itemprop="keywords" content="Raspberry Pi,pico," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -55,12 +55,12 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">picoのC/C&#43;&#43;開発環境構築</h1>
+			<h1 class="post__title">picoの新しいプロジェクト作成</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">devcat</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-12T15:31:32&#43;09:00">2021-09-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/" rel="category">電子工作</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-26T11:00:53&#43;09:00">2021-09-26</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/" rel="category">電子工作</a>
 	</span>
 </div></div>
 		</header>
@@ -71,61 +71,105 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#目的">目的</a></li>
-    <li><a href="#使用環境">使用環境</a></li>
-    <li><a href="#環境構築手順">環境構築手順</a>
+    <li><a href="#フォルダ構成">フォルダ構成</a></li>
+    <li><a href="#コード類">コード類</a>
       <ul>
         <li></li>
       </ul>
     </li>
+    <li><a href="#build">build</a></li>
   </ul>
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
 			<h2 id="目的">目的</h2>
-<p>マイコンの勉強のために「Raspberry Pi Pico」を購入した<br>
-Windows環境で開発が行える環境構築方法を記録する</p>
-<h2 id="使用環境">使用環境</h2>
-<ul>
-<li>Win10 Pro</li>
-<li>WSL2 + Ubuntu20.04</li>
-<li>VScode</li>
-</ul>
-<h2 id="環境構築手順">環境構築手順</h2>
-<h6 id="ubuntu2004に必要なパッケージのインストール">Ubuntu20.04に必要なパッケージのインストール</h6>
-<pre tabindex="0"><code>$ sudo apt update
-$ sudo apt install build-essential cmake gcc-arm-none-eabi git curl
-</code></pre><h6 id="pico-sdkのインストール">pico-sdkのインストール</h6>
-<pre tabindex="0"><code>$ mkdir ~/pico
-$ cd ~/pico
-$ git clone https://github.com/raspberrypi/pico-sdk
-$ cd ~/pico/pico-sdk
-$ git submodule update --init
-</code></pre><h6 id="pico-sdkのパス通し">pico-sdkのパス通し</h6>
-<pre tabindex="0"><code>$ echo export PICO_SDK_PATH=~/pico/pico-sdk &gt;&gt; ~/.bashrc
-$ source ~/.bashrc
-</code></pre><h6 id="picoサンプルの入手">picoサンプルの入手</h6>
-<pre tabindex="0"><code>$ cd ~/pico
-$ git clone https://github.com/raspberrypi/pico-examples
-</code></pre><h6 id="lチカサンプルblinkのビルド">Lチカサンプル（blink）のビルド</h6>
-<pre tabindex="0"><code>
-$ cd ~/pico/pico-examples
-$ mkdir build
-$ cd build
+<p>cloneしたサンプルをビルドすることはできたので<br>
+作成したコードをビルドするためのプロジェクトを作成する</p>
+<p><a href="https://vha3.github.io/Pico/Setup/Getting_started_c.pdf">参考： Getting started with Raspberry Pi Pico </a></p>
+<h2 id="フォルダ構成">フォルダ構成</h2>
+<p>サンプルを確認するとルートディレクトリに共通の「CMakeList.txt」があり<br>
+1階層下に個別コード毎の「CMakeList.txt」がある。<br>
+またルートディレクトリの「pico_sdk_import.cmake」と「example_auto_set_url.cmake」をコピーする。<br>
+以上を踏まえて以下のようなフォルダ構成とする</p>
+<pre tabindex="0"><code>~/works/
+    ┣ build/　　・・・ makeとかを実行するためのフォルダ
+    ┣ ex_01/　　 ・・・ 自前コード
+    ┃   ┣ ex_01.cpp
+    ┃   ┗ CMakeList.txt
+    ┣ CMakeList.txt
+    ┣ example_auto_set_url.cmake　　　 ・・・ サンプルからコピーしたもの
+    ┗ pico_sdk_import.cmake　　　・・・ サンプルからコピーしたもの    
+</code></pre><h2 id="コード類">コード類</h2>
+<h6 id="ルートディレクトリのcmakelisttxt">ルートディレクトリの「CMakeList.txt」</h6>
+<p>コードを増やす場合はサブディレクトリを追加する</p>
+<pre tabindex="0"><code>cmake_minimum_required(VERSION 3.12)
+
+# Pull in SDK (must be before project)
+include(pico_sdk_import.cmake)
+
+project(pico_examples C CXX ASM)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+
+set(PICO_EXAMPLES_PATH ${PROJECT_SOURCE_DIR})
+
+# Initialize the SDK
+pico_sdk_init()
+include(example_auto_set_url.cmake)
+
+# sub_directory
+add_subdirectory(ex01)
+</code></pre><h6 id="ex_01のcmakelisttxt">ex_01の「CMakeList.txt」</h6>
+<p>ここでは簡単のためにサンプルの「blink」を修正したものをする</p>
+<pre tabindex="0"><code>add_executable(ex_01
+        ex_01.cpp
+        )
+
+# Pull in our pico_stdlib which pulls in commonly used features
+target_link_libraries(ex_01 pico_stdlib)
+
+# create map/bin/hex file etc.
+pico_add_extra_outputs(ex_01)
+
+# add url via pico_set_program_url
+example_auto_set_url(ex_01)
+</code></pre><h6 id="ex_01のコード">ex_01の「コード」</h6>
+<p>ここでは簡単のためにサンプルの「blink」を引用する</p>
+<pre tabindex="0"><code>/**
+ * Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#include &quot;pico/stdlib.h&quot;
+
+int main() {
+#ifndef PICO_DEFAULT_LED_PIN
+#warning blink example requires a board with a regular LED
+#else
+    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+    while (true) {
+        gpio_put(LED_PIN, 1);
+        sleep_ms(250);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(250);
+    }
+#endif
+}
+</code></pre><h2 id="build">build</h2>
+<p>以下の手順でビルドする</p>
+<pre tabindex="0"><code>$ cd ~/works/build
 $ cmake ..
-　　成功すると末尾に以下のような表示
-　　-- Configuring done
-　　-- Generating done
-　　-- Build files have been written to: 作業パス
-$ cd blink
 $ make
-$ ls | grep blink.uf2
-    blink.uf2
-</code></pre><h6 id="生成プログラムのコピー">生成プログラムのコピー</h6>
-<p>pico本体の「BOOTSEL」を押下しながらWinPCとUSBケーブルで接続する。<br>
-するとUSBストレージとして認識されるので先ほどの「blink.uf2」をコピーする</p>
-<h6 id="実行">実行</h6>
-<p>コピーした段階で自動的に実行開始する<br>
-正しく作業できていた場合はpico本体のLEDがチカチカしているのを確認できるはず</p>
+　　～～
+　　[100%] Linking CXX executable ex_01.elf
+　　[100%] Built target ex_01
+</code></pre><p>無事ビルドが成功すると</p>
+<pre tabindex="0"><code>~/works/build/ex_01/
+                ┗ ex_01.elf
+</code></pre><p>が生成されている</p>
 
 		</div>
 		<footer class="post__footer">
@@ -148,15 +192,9 @@ $ ls | grep blink.uf2
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="https://devcat.jp/post/test_post/" rel="prev">
+		<a class="pager__link" href="https://devcat.jp/post/pi_pico_devenv_wsl/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">投稿練習</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://devcat.jp/post/pico_new_project/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">picoの新しいプロジェクト作成</p>
+			<p class="pager__title">picoのC/C&#43;&#43;開発環境構築</p>
 		</a>
 	</div>
 </nav>

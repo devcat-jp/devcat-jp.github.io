@@ -6,7 +6,16 @@
     <description>Recent content on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 12 Sep 2021 15:31:32 +0900</lastBuildDate><atom:link href="https://devcat.jp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 11:00:53 +0900</lastBuildDate><atom:link href="https://devcat.jp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoの新しいプロジェクト作成</title>
+      <link>https://devcat.jp/post/pico_new_project/</link>
+      <pubDate>Sun, 26 Sep 2021 11:00:53 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/pico_new_project/</guid>
+      <description>自分で用意したフォルダでpicoのプロジェクト作成する手法を整理</description>
+    </item>
+    
     <item>
       <title>picoのC/C&#43;&#43;開発環境構築</title>
       <link>https://devcat.jp/post/pi_pico_devenv_wsl/</link>

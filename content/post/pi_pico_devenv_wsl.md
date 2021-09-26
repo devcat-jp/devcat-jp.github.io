@@ -1,7 +1,7 @@
 ---
 title: "picoのC/C++開発環境構築"
 date: 2021-09-12T15:31:32+09:00
-draft: ture
+draft: false
 summary: "WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う"
 tags: 
   - "Raspberry Pi"
