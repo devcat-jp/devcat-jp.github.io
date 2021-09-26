@@ -6,31 +6,40 @@
     <description>Recent content in Posts on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 26 Sep 2021 11:00:53 +0900</lastBuildDate><atom:link href="https://devcat.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 14:47:01 +0900</lastBuildDate><atom:link href="https://devcat.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoでusbを使用したシリアル通信</title>
+      <link>https://devcat.jp/post/03_pico_study_tinyusb/</link>
+      <pubDate>Sun, 26 Sep 2021 14:47:01 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/03_pico_study_tinyusb/</guid>
+      <description>usbを使用してPCと双方向通信を行う</description>
+    </item>
+    
     <item>
       <title>picoの新しいプロジェクト作成</title>
-      <link>https://devcat.jp/post/pico_new_project/</link>
+      <link>https://devcat.jp/post/02_pico_new_project/</link>
       <pubDate>Sun, 26 Sep 2021 11:00:53 +0900</pubDate>
       
-      <guid>https://devcat.jp/post/pico_new_project/</guid>
+      <guid>https://devcat.jp/post/02_pico_new_project/</guid>
       <description>自分で用意したフォルダでpicoのプロジェクト作成する手法を整理</description>
     </item>
     
     <item>
       <title>picoのC/C&#43;&#43;開発環境構築</title>
-      <link>https://devcat.jp/post/pi_pico_devenv_wsl/</link>
+      <link>https://devcat.jp/post/01_pi_pico_devenv_wsl/</link>
       <pubDate>Sun, 12 Sep 2021 15:31:32 +0900</pubDate>
       
-      <guid>https://devcat.jp/post/pi_pico_devenv_wsl/</guid>
+      <guid>https://devcat.jp/post/01_pi_pico_devenv_wsl/</guid>
       <description>WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う</description>
     </item>
     
     <item>
       <title>投稿練習</title>
-      <link>https://devcat.jp/post/test_post/</link>
+      <link>https://devcat.jp/post/00_test_post/</link>
       <pubDate>Sun, 12 Sep 2021 13:59:18 +0900</pubDate>
       
-      <guid>https://devcat.jp/post/test_post/</guid>
+      <guid>https://devcat.jp/post/00_test_post/</guid>
       <description>概要欄</description>
     </item>
     

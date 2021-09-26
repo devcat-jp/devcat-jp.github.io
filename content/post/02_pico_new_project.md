@@ -28,9 +28,9 @@ cloneしたサンプルをビルドすることはできたので
 [参考： Getting started with Raspberry Pi Pico ](https://vha3.github.io/Pico/Setup/Getting_started_c.pdf)
 
 ## フォルダ構成
-サンプルを確認するとルートディレクトリに共通の「CMakeList.txt」があり  
-1階層下に個別コード毎の「CMakeList.txt」がある。  
-またルートディレクトリの「pico_sdk_import.cmake」と「example_auto_set_url.cmake」をコピーする。  
+サンプルを確認すると直下のフォルダに共通の「CMakeLists.txt」があり  
+1階層下に個別コード毎の「CMakeLists.txt」がある。  
+また直下フォルダの「pico_sdk_import.cmake」と「example_auto_set_url.cmake」が必要らしい。  
 以上を踏まえて以下のようなフォルダ構成とする
 
 ```
@@ -38,14 +38,14 @@ cloneしたサンプルをビルドすることはできたので
     ┣ build/　　・・・ makeとかを実行するためのフォルダ
     ┣ ex_01/　　 ・・・ 自前コード
     ┃   ┣ ex_01.cpp
-    ┃   ┗ CMakeList.txt
-    ┣ CMakeList.txt
+    ┃   ┗ CMakeLists.txt
+    ┣ CMakeLists.txt
     ┣ example_auto_set_url.cmake　　　 ・・・ サンプルからコピーしたもの
     ┗ pico_sdk_import.cmake　　　・・・ サンプルからコピーしたもの    
 ```
 
 ## コード類
-###### ルートディレクトリの「CMakeList.txt」
+###### works直下の「CMakeLists.txt」
 コードを増やす場合はサブディレクトリを追加する
 ```
 cmake_minimum_required(VERSION 3.12)
@@ -67,7 +67,7 @@ include(example_auto_set_url.cmake)
 add_subdirectory(ex01)
 ```
 
-###### ex_01の「CMakeList.txt」
+###### ex_01の「CMakeLists.txt」
 ここでは簡単のためにサンプルの「blink」を修正したものをする
 ```
 add_executable(ex_01
