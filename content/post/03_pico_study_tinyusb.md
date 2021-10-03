@@ -4,6 +4,12 @@ summary: "usbを使用してPCと双方向通信を行う"
 date: 2021-09-26T14:47:01+09:00
 draft: false
 
+tags: 
+  - "Raspberry Pi"
+  - "pico"
+categories:
+  - "電子工作"
+
 comments: false # Enable Disqus comments for specific page
 authorbox: false # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page

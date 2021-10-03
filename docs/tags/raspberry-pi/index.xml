@@ -6,7 +6,25 @@
     <description>Recent content in Raspberry Pi on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 26 Sep 2021 11:00:53 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Sep 2021 01:16:33 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoでI2C bus scan</title>
+      <link>https://devcat.jp/post/04_pico_i2c_bus_scan/</link>
+      <pubDate>Mon, 27 Sep 2021 01:16:33 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/04_pico_i2c_bus_scan/</guid>
+      <description>I2C接続のOLEDディスプレイに表示をさせたい、まずは配線と認識できていることまでを実施する</description>
+    </item>
+    
+    <item>
+      <title>picoでusbを使用したシリアル通信</title>
+      <link>https://devcat.jp/post/03_pico_study_tinyusb/</link>
+      <pubDate>Sun, 26 Sep 2021 14:47:01 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/03_pico_study_tinyusb/</guid>
+      <description>usbを使用してPCと双方向通信を行う</description>
+    </item>
+    
     <item>
       <title>picoの新しいプロジェクト作成</title>
       <link>https://devcat.jp/post/02_pico_new_project/</link>

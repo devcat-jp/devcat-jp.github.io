@@ -4,6 +4,12 @@ summary: "I2C接続のOLEDディスプレイに表示をさせたい、まずは
 date: 2021-09-27T01:16:33+09:00
 draft: false
 
+tags: 
+  - "Raspberry Pi"
+  - "pico"
+categories:
+  - "電子工作"
+
 comments: false # Enable Disqus comments for specific page
 authorbox: false # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
