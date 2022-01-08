@@ -1,8 +1,8 @@
 ---
-title: "投稿練習"
+title: "Hugo使い方メモ"
 date: 2021-09-12T13:59:18+09:00
 draft: false
-summary: "概要欄"
+summary: "使用するコマンドや小ネタを記録"
 
 comments: false # Enable Disqus comments for specific page
 authorbox: false # Enable authorbox for specific page
