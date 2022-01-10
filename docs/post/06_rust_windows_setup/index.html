@@ -4,22 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Hugo使い方メモ - でぶねこ</title>
+	<title>WindowsでのRust開発環境構築 - でぶねこ</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Hugo使い方メモ" />
-<meta property="og:description" content="使用するコマンドや小ネタを記録" />
+		<meta property="og:title" content="WindowsでのRust開発環境構築" />
+<meta property="og:description" content="ツールチェインや設定などのメモ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devcat.jp/post/00_test_post/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-12T13:59:18+09:00" />
-<meta property="article:modified_time" content="2021-09-12T13:59:18+09:00" />
+<meta property="og:url" content="https://devcat.jp/post/06_rust_windows_setup/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-08T11:24:11+09:00" />
+<meta property="article:modified_time" content="2022-01-08T11:24:11+09:00" />
 
 
-		<meta itemprop="name" content="Hugo使い方メモ">
-<meta itemprop="description" content="使用するコマンドや小ネタを記録"><meta itemprop="datePublished" content="2021-09-12T13:59:18+09:00" />
-<meta itemprop="dateModified" content="2021-09-12T13:59:18+09:00" />
-<meta itemprop="wordCount" content="15">
-<meta itemprop="keywords" content="" />
+		<meta itemprop="name" content="WindowsでのRust開発環境構築">
+<meta itemprop="description" content="ツールチェインや設定などのメモ"><meta itemprop="datePublished" content="2022-01-08T11:24:11+09:00" />
+<meta itemprop="dateModified" content="2022-01-08T11:24:11+09:00" />
+<meta itemprop="wordCount" content="65">
+<meta itemprop="keywords" content="Rust," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -66,12 +66,14 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Hugo使い方メモ</h1>
+			<h1 class="post__title">WindowsでのRust開発環境構築</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">devcat</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-12T13:59:18&#43;09:00">2021-09-12</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-08T11:24:11&#43;09:00">2022-01-08</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/rust/" rel="category">Rust</a>
+	</span>
+</div></div>
 		</header>
 		
 <div class="post__toc toc">
@@ -79,40 +81,73 @@ if (!doNotTrack) {
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#使用テーマ">使用テーマ</a></li>
-        <li><a href="#新規記事作成">新規記事作成</a></li>
-        <li><a href="#静的ページ作成">静的ページ作成</a></li>
-        <li><a href="#hugoサーバ立ち上げ">Hugoサーバ立ち上げ</a></li>
-        <li><a href="#画像貼り付け">画像貼り付け</a></li>
-      </ul>
-    </li>
+    <li><a href="#-目的">■ 目的</a></li>
+    <li><a href="#-リンカのインストール">■ リンカのインストール</a></li>
+    <li><a href="#-rustツールチェインのインストール">■ Rustツールチェインのインストール</a></li>
   </ul>
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<h3 id="使用テーマ">使用テーマ</h3>
-<pre tabindex="0"><code>https://themes.gohugo.io/themes/github-style/#setup-readme
-</code></pre><h3 id="新規記事作成">新規記事作成</h3>
-<pre tabindex="0"><code>$ hugo new post/title_of_the_post.md
-</code></pre><h3 id="静的ページ作成">静的ページ作成</h3>
-<pre tabindex="0"><code>$ hugo
-</code></pre><h3 id="hugoサーバ立ち上げ">Hugoサーバ立ち上げ</h3>
-<pre tabindex="0"><code>$hogo server
-</code></pre><h3 id="画像貼り付け">画像貼り付け</h3>
-<pre tabindex="0"><code>https://hugo-de-blog.com/hugo-img/
+			<h2 id="-目的">■ 目的</h2>
+<p>Windows環境でのRust環境構築手順を記録として残すこと</p>
+<h2 id="-リンカのインストール">■ リンカのインストール</h2>
+<p>RustコンパイラはCコンパイラのリンカを使用するとの情報。
+一般的な推奨はVisual StudioまたはMicrosoft C++ Build Toolsをインストールすることになっている。
+今回は後者のMicrosoft C++ Build Toolsを選択する。</p>
+<p><a href="https://visualstudio.microsoft.com/ja/visual-cpp-build-tools/">Microsoft C++ Build Tools　ダウンロードページ</a><br>
+<figure><img src="https://devcat.jp/images/06_01.png" width="350px"/>
+</figure>
+</p>
+<p>「Build Toolsのダウンロード」をクリックすると自動的にダウンロードが開始する
+ダウンロードしたものを起動し、下図を選択して「インストール」をクリックする。
+<figure><img src="https://devcat.jp/images/06_02.png" width="650px"/>
+</figure>
+</p>
+<p>インストールが完了すると再起動を要求するので「再開」で再起動する
+<figure><img src="https://devcat.jp/images/06_03.png" width="350px"/>
+</figure>
+</p>
+<h2 id="-rustツールチェインのインストール">■ Rustツールチェインのインストール</h2>
+<p>公式ページからインスーラを入手する</p>
+<p><a href="https://www.rust-lang.org/ja/learn/get-started">Rust　ダウンロードページ</a><br>
+<figure><img src="https://devcat.jp/images/06_04.png"/>
+</figure>
+</p>
+<p>ダウンロードしたものを起動し、「1」を入力してEnter
+<figure><img src="https://devcat.jp/images/06_05.png" width="350px"/>
+</figure>
+
+インストールが完了すると以下のような表記になるのでEnterを入力して終了
+<figure><img src="https://devcat.jp/images/06_06.png"/>
+</figure>
+</p>
+<p>「PowerShell」を起動し、Rustのバージョン確認ができるか確認する。</p>
+<pre tabindex="0"><code>PS C:\&gt; rustup --version
+rustup 1.24.3 (ce5817a94 2021-05-31)
+info: This is the version for the rustup toolchain manager, not the rustc compiler.
+info: The currently active `rustc` version is `rustc 1.57.0 (f1edd0429 2021-11-29)`
 </code></pre>
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="https://devcat.jp/tags/rust/" rel="tag">Rust</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://devcat.jp/post/01_pi_pico_devenv_wsl/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">picoのC/C&#43;&#43;開発環境構築</p>
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://devcat.jp/post/05_pico_ssd1306_01/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">picoでOLED（SSD1306）ことはじめ</p>
 		</a>
 	</div>
 </nav>
