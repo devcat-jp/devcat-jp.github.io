@@ -4,21 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Hugo使い方メモ - でぶねこ</title>
+	<title>cpで中身をコピーする - でぶねこ</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Hugo使い方メモ" />
-<meta property="og:description" content="静的サイトジェネレータであるHugoの使用するコマンドや小ネタを記録" />
+		<meta property="og:title" content="cpで中身をコピーする" />
+<meta property="og:description" content="「cp」コマンドでフォルダの中身をコピーする際の小ネタ" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devcat.jp/post/00_test_post/" />
-<meta property="article:published_time" content="2021-09-12T13:59:18+09:00" />
-<meta property="article:modified_time" content="2023-02-19T11:21:21+09:00" />
+<meta property="og:url" content="https://devcat.jp/post/07_linux_cmd_cp_memo/" />
+<meta property="article:published_time" content="2023-02-19T11:37:42+09:00" />
+<meta property="article:modified_time" content="2023-02-19T11:49:32+09:00" />
 
-		<meta itemprop="name" content="Hugo使い方メモ">
-<meta itemprop="description" content="静的サイトジェネレータであるHugoの使用するコマンドや小ネタを記録">
-<meta itemprop="datePublished" content="2021-09-12T13:59:18+09:00" />
-<meta itemprop="dateModified" content="2023-02-19T11:21:21+09:00" />
-<meta itemprop="wordCount" content="33">
+		<meta itemprop="name" content="cpで中身をコピーする">
+<meta itemprop="description" content="「cp」コマンドでフォルダの中身をコピーする際の小ネタ">
+<meta itemprop="datePublished" content="2023-02-19T11:37:42+09:00" />
+<meta itemprop="dateModified" content="2023-02-19T11:49:32+09:00" />
+<meta itemprop="wordCount" content="9">
 
 
 
@@ -72,13 +72,13 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Hugo使い方メモ</h1>
+			<h1 class="post__title">cpで中身をコピーする</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">devcat</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-12T13:59:18&#43;09:00">2021-09-12</time>
-	<time class="meta__text" datetime="2023-02-19T11:21:21&#43;09:00">(Last Modified: 2023-02-19)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/%E3%83%A1%E3%83%A2/" rel="category">メモ</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-02-19T11:37:42&#43;09:00">2023-02-19</time>
+	<time class="meta__text" datetime="2023-02-19T11:49:32&#43;09:00">(Last Modified: 2023-02-19)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/%E3%83%A1%E3%83%A2/" rel="category">メモ</a>
 	</span>
 </div></div>
 		</header>
@@ -88,40 +88,20 @@ if (!doNotTrack) {
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#目的">目的</a>
       <ul>
-        <li><a href="#使用テーマ">使用テーマ</a></li>
-        <li><a href="#新規記事作成">新規記事作成</a></li>
-        <li><a href="#静的ページ作成">静的ページ作成</a></li>
-        <li><a href="#hugoサーバ立ち上げ">Hugoサーバ立ち上げ</a></li>
-        <li><a href="#別マシンからhugoサーバにアクセス">別マシンからHugoサーバにアクセス</a></li>
-        <li><a href="#記事の更新日を有効にする">記事の更新日を有効にする</a></li>
-        <li><a href="#画像貼り付け">画像貼り付け</a></li>
+        <li><a href="#コマンド例">コマンド例</a></li>
       </ul>
     </li>
   </ul>
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<h3 id="使用テーマ">使用テーマ</h3>
-<pre><code>https://themes.gohugo.io/themes/github-style/#setup-readme
-</code></pre><h3 id="新規記事作成">新規記事作成</h3>
-<pre><code>$ hugo new post/title_of_the_post.md
-</code></pre><h3 id="静的ページ作成">静的ページ作成</h3>
-<pre><code>$ hugo
-</code></pre><h3 id="hugoサーバ立ち上げ">Hugoサーバ立ち上げ</h3>
-<pre><code>$ hogo server -D
-</code></pre><h3 id="別マシンからhugoサーバにアクセス">別マシンからHugoサーバにアクセス</h3>
-<p>通常はローカルマシンでしかアクセスできないので、bind設定とURLを変更する。<br>
-baseURLはHugoサーバが動作しているIPを指定する。</p>
-<pre><code>$ hugo server -D --bind=&quot;0.0.0.0&quot; --baseURL=&quot;http://192.168.*.*/&quot;
-</code></pre><h3 id="記事の更新日を有効にする">記事の更新日を有効にする</h3>
-<p>config.tomlに以下の設定を追加することで更新日が追加される。<br>
-<a href="https://aloha-ru.com/hugo/hugo-dateupdate/">参考：アロハル</a></p>
-<pre><code>[frontmatter]
-  lastmod = ':fileModTime'
-</code></pre><h3 id="画像貼り付け">画像貼り付け</h3>
-<pre><code>https://hugo-de-blog.com/hugo-img/
+			<h2 id="目的">目的</h2>
+<p>フォルダの中身を複製したい際に「cp」で普通にフォルダを指定すると複製先に複製元のフォルダが作成されてしまう。これは下記のようにすることで回避できたので記録する。</p>
+<h3 id="コマンド例">コマンド例</h3>
+<p>このようにフォルダの中身を指定すれば良い。</p>
+<pre><code>$ cp -r /foo/* ./
 </code></pre>
 		</div>
 	</article>
@@ -129,10 +109,10 @@ baseURLはHugoサーバが動作しているIPを指定する。</p>
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="https://devcat.jp/post/01_pi_pico_devenv_wsl/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">picoのC/C&#43;&#43;開発環境構築</p>
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://devcat.jp/post/06_rust_windows_setup/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">WindowsでのRust開発環境構築</p>
 		</a>
 	</div>
 </nav>

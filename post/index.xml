@@ -6,7 +6,16 @@
     <description>Recent content in Posts on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 08 Jan 2022 11:24:11 +0900</lastBuildDate><atom:link href="https://devcat.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 11:37:42 +0900</lastBuildDate><atom:link href="https://devcat.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cpで中身をコピーする</title>
+      <link>https://devcat.jp/post/07_linux_cmd_cp_memo/</link>
+      <pubDate>Sun, 19 Feb 2023 11:37:42 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/07_linux_cmd_cp_memo/</guid>
+      <description>「cp」コマンドでフォルダの中身をコピーする際の小ネタ</description>
+    </item>
+    
     <item>
       <title>WindowsでのRust開発環境構築</title>
       <link>https://devcat.jp/post/06_rust_windows_setup/</link>

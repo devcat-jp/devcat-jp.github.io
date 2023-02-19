@@ -6,7 +6,16 @@
     <description>Recent content in Categories on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sat, 08 Jan 2022 11:24:11 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 11:37:42 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>メモ</title>
+      <link>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</link>
+      <pubDate>Sun, 19 Feb 2023 11:37:42 +0900</pubDate>
+      
+      <guid>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Rust</title>
       <link>https://devcat.jp/categories/rust/</link>
@@ -22,15 +31,6 @@
       <pubDate>Sun, 10 Oct 2021 11:24:11 +0900</pubDate>
       
       <guid>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>メモ</title>
-      <link>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</link>
-      <pubDate>Sun, 12 Sep 2021 13:59:18 +0900</pubDate>
-      
-      <guid>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</guid>
       <description></description>
     </item>
     

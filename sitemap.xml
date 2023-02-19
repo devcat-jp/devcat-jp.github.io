@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://devcat.jp/categories/</loc>
-    <lastmod>2023-02-19T11:21:21+09:00</lastmod>
+    <lastmod>2023-02-19T11:49:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devcat.jp/post/07_linux_cmd_cp_memo/</loc>
+    <lastmod>2023-02-19T11:49:32+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://devcat.jp/post/</loc>
-    <lastmod>2023-02-19T11:21:21+09:00</lastmod>
+    <lastmod>2023-02-19T11:49:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devcat.jp/</loc>
+    <lastmod>2023-02-19T11:49:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</loc>
+    <lastmod>2023-02-19T11:49:32+09:00</lastmod>
   </url>
   
   <url>
@@ -30,11 +45,6 @@
   <url>
     <loc>https://devcat.jp/post/06_rust_windows_setup/</loc>
     <lastmod>2022-09-03T19:58:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://devcat.jp/</loc>
-    <lastmod>2023-02-19T11:21:21+09:00</lastmod>
   </url>
   
   <url>
@@ -79,11 +89,6 @@
   
   <url>
     <loc>https://devcat.jp/post/00_test_post/</loc>
-    <lastmod>2023-02-19T11:21:21+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://devcat.jp/categories/%E3%83%A1%E3%83%A2/</loc>
     <lastmod>2023-02-19T11:21:21+09:00</lastmod>
   </url>
   
