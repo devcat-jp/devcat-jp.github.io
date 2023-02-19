@@ -6,7 +6,16 @@
     <description>Recent content in Raspberry Pi on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 10 Oct 2021 11:24:11 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 14:02:57 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ラズパイでUSBマイクによる録音</title>
+      <link>https://devcat.jp/post/08_pi_usb_mic/</link>
+      <pubDate>Sun, 19 Feb 2023 14:02:57 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/08_pi_usb_mic/</guid>
+      <description>ラズベリーパイでUSBマイクを用いた録音方法を整理する</description>
+    </item>
+    
     <item>
       <title>picoでOLED（SSD1306）ことはじめ</title>
       <link>https://devcat.jp/post/05_pico_ssd1306_01/</link>
