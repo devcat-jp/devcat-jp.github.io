@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>picoでI2C bus scan - でぶねこ</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="picoでI2C bus scan" />
+<meta property="og:description" content="I2C接続のOLEDディスプレイに表示をさせたい、まずは配線と認識できていることまでを実施する" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devcat.jp/post/04_pico_i2c_bus_scan/" />
+<meta property="article:published_time" content="2021-09-27T01:16:33+09:00" />
+<meta property="article:modified_time" content="2021-09-27T01:16:33+09:00" />
+
+		<meta itemprop="name" content="picoでI2C bus scan">
+<meta itemprop="description" content="I2C接続のOLEDディスプレイに表示をさせたい、まずは配線と認識できていることまでを実施する">
+<meta itemprop="datePublished" content="2021-09-27T01:16:33+09:00" />
+<meta itemprop="dateModified" content="2021-09-27T01:16:33+09:00" />
+<meta itemprop="wordCount" content="494">
+
+
+
+<meta itemprop="keywords" content="Raspberry Pi,pico," />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="https://devcat.jp/css/style.css">
+	<link rel="stylesheet" href="https://devcat.jp/css/custom.css">
+
+	<link rel="shortcut icon" href="https://devcat.jp/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-X65QN85NGJ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="https://devcat.jp/" title="でぶねこ" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://devcat.jp/img/title.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">でぶねこ</div>
+					<div class="logo__tagline">アウトプットって大事だよね</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">picoでI2C bus scan</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">devcat</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-27T01:16:33&#43;09:00">2021-09-27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/" rel="category">電子工作</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#目的">目的</a></li>
+    <li><a href="#配線">配線</a></li>
+    <li><a href="#サンプル調査">サンプル調査</a></li>
+    <li><a href="#コード例">コード例</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h2 id="目的">目的</h2>
+<p>I2C接続のOLEDディスプレイに表示をさせたい<br>
+そのためにまずは配線と認識できていることまでを実施する。<br>
+使用するOLEDは秋月電子の下記を利用する。</p>
+<p><a href="https://akizukidenshi.com/catalog/g/gP-12031/"> 使用OLED ： ０．９６インチ　１２８×６４ドット有機ＥＬディスプレイ </a><br>
+<a href="https://ja.wikipedia.org/wiki/I2C"> 参考 ： ウィキペディア（I2C） </a></p>
+<h2 id="配線">配線</h2>
+<p>I2CはGND/VCC/SCL/SDAの4本の配線を行えばよい。<br>
+今回はpicoの赤で囲った部分をOLEDと配線する。</p>
+<figure>
+    <img src="https://devcat.jp/images/04_01.png"
+         alt="配線" width="650px"/> 
+</figure>
+
+<table>
+<thead>
+<tr>
+<th>pin番号</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>SDA</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SCL</td>
+</tr>
+<tr>
+<td>36</td>
+<td>VCC（3.3V）</td>
+</tr>
+<tr>
+<td>38</td>
+<td>GNC</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://akizukidenshi.com/download/ds/raspberry/pico-datasheet.pdf"> 図引用（Fig2） </a></p>
+<h2 id="サンプル調査">サンプル調査</h2>
+<p>公式サンプルではI2Cのバススキャンサンプルは以下にある</p>
+<pre><code>pico-examples\i2c\bus_scan
+</code></pre><p>このコードを見るとpicoでI2Cを使用するポイントは以下のようだ</p>
+<ul>
+<li>target_link_libraries<br>
+「hardware_i2c」を追加する</li>
+<li>hファイル追加<br>
+#include &ldquo;hardware/i2c.h&rdquo;<br>
+#include &ldquo;pico/binary_info.h&rdquo;</li>
+</ul>
+<p>I2Cの設定としては以下が必要なもよう </p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uint i2c_init	(i2c_inst_t* i2c,uint baudrate)</td>
+<td>I2Cの初期化、標準100kbit/s</td>
+</tr>
+<tr>
+<td>void gpio_set_function	(	uint gpio, enum gpio_function fn )</td>
+<td>pinの役割を設定する、今回はI2C用に設定</td>
+</tr>
+<tr>
+<td>static void gpio_pull_up	(	uint gpio)</td>
+<td>I2CのSDAとSCLをプルアップする</td>
+</tr>
+<tr>
+<td>bi_decl</td>
+<td>？</td>
+</tr>
+</tbody>
+</table>
+<h2 id="コード例">コード例</h2>
+<p>サンプルを参考に、すでに作成したex_02を拡張する。<br>
+USBから「i2c」と入力することでサンプルのscanが実行されるようにする。</p>
+<h6 id="実行例">実行例</h6>
+<p><figure>
+    <img src="https://devcat.jp/images/04_02.png"
+         alt="cap"/> 
+</figure>
+
+この例だと 0x3c に認識しているようだ</p>
+<h6 id="cmakeliststxt">CMakeLists.txt</h6>
+<pre><code>if (TARGET tinyusb_device)
+    add_executable(ex_03
+            ex_03.cpp
+            )
+
+    # Pull in our pico_stdlib which aggregates commonly used features
+    target_link_libraries(ex_03 pico_stdlib hardware_i2c)
+
+    # enable usb output, disable uart output
+    pico_enable_stdio_usb(ex_03 1)
+    pico_enable_stdio_uart(ex_03 0)
+
+    # create map/bin/hex/uf2 file etc.
+    pico_add_extra_outputs(ex_03)
+
+    # add url via pico_set_program_url
+    example_auto_set_url(ex_03)
+elseif(PICO_ON_DEVICE)
+    message(WARNING &quot;not building ex_03 because TinyUSB submodule is not initialized in the SDK&quot;)
+endif()
+</code></pre><h6 id="ex_03cpp">ex_03.cpp</h6>
+<pre><code>/**
+ * the reserved_addr(uint8_t addr) function is:
+ * the i2c_bus_scan() function is:
+ *          Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+ *          SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#include &lt;stdio.h&gt;
+#include &quot;pico/stdlib.h&quot;
+#include &quot;hardware/i2c.h&quot;
+#include &quot;pico/binary_info.h&quot;
+#include &quot;class/cdc/cdc_device.h&quot;
+
+
+// I2C reserves some addresses for special purposes. We exclude these from the scan.
+// These are any addresses of the form 000 0xxx or 111 1xxx
+bool reserved_addr(uint8_t addr) {
+    return (addr &amp; 0x78) == 0 || (addr &amp; 0x78) == 0x78;
+}
+
+int i2c_bus_scan(){
+    printf(&quot;\nI2C Bus Scan\n&quot;);
+    printf(&quot;   0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n&quot;);
+
+    for (int addr = 0; addr &lt; (1 &lt;&lt; 7); ++addr) {
+        if (addr % 16 == 0) {
+            printf(&quot;%02x &quot;, addr);
+        }
+
+        // Perform a 1-byte dummy read from the probe address. If a slave
+        // acknowledges this address, the function returns the number of bytes
+        // transferred. If the address byte is ignored, the function returns
+        // -1.
+
+        // Skip over any reserved addresses.
+        int ret;
+        uint8_t rxdata;
+        if (reserved_addr(addr))
+            ret = PICO_ERROR_GENERIC;
+        else
+            ret = i2c_read_blocking(i2c_default, addr, &amp;rxdata, 1, false);
+
+        printf(ret &lt; 0 ? &quot;.&quot; : &quot;@&quot;);
+        printf(addr % 16 == 15 ? &quot;\n&quot; : &quot;  &quot;);
+    }
+    printf(&quot;Done.\n&quot;);
+        
+    return 0;
+}
+
+
+
+int main() {
+    stdio_init_all();
+
+    unsigned short cmd_buff_index_ = 0;
+    char cmd_buff[256] = {0};
+    char tmp_input;
+    int res = 0;
+
+    // i2c setting
+    // This example will use I2C0 on the default SDA and SCL pins (4, 5 on a Pico)
+    i2c_init(i2c_default, 100 * 1000);
+    gpio_set_function(PICO_DEFAULT_I2C_SDA_PIN, GPIO_FUNC_I2C);
+    gpio_set_function(PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C);
+    gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
+    gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
+    // Make the I2C pins available to picotool
+    bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
+
+    // led setting
+    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+
+    while (true) {
+        // RxBuffにデータが存在する
+        if(tud_cdc_available() &gt; 0){
+            // 1文字受信
+            tmp_input = tud_cdc_read_char();
+
+            // 改行文字か？
+            if(tmp_input == '\r') {
+                // 表示改行
+                printf(&quot;\n&quot;);
+                // null文字付与
+                cmd_buff[cmd_buff_index_] = '\0';
+                // コマンド判断
+                char* command = &amp;cmd_buff[0];
+                if(strcmp(command, &quot;led&quot;) == 0) {
+                    printf(&quot;LED Blink\n&quot;);
+                    gpio_put(LED_PIN, 1);
+                    sleep_ms(250);
+                    gpio_put(LED_PIN, 0);
+                    sleep_ms(250);
+                } else if(strcmp(command, &quot;i2c&quot;) == 0) {
+                    if(i2c_bus_scan() != 0) printf(&quot;is2 bus scan err\n&quot;);
+                } else {
+                    printf(&quot;no such command\n&quot;);
+                }
+                // index clear
+                cmd_buff_index_ = 0;
+            } else {
+                cmd_buff[cmd_buff_index_] = tmp_input;
+                cmd_buff_index_++;
+            }
+        }
+        // wait
+        sleep_ms(1);
+    }
+}
+</code></pre>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="https://devcat.jp/tags/raspberry-pi/" rel="tag">Raspberry Pi</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="https://devcat.jp/tags/pico/" rel="tag">pico</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="https://devcat.jp/post/03_pico_study_tinyusb/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">picoでusbを使用したシリアル通信</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://devcat.jp/post/05_pico_ssd1306_01/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">picoでOLED（SSD1306）ことはじめ</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://devcat.jp" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/06_rust_windows_setup/">WindowsでのRust開発環境構築</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/05_pico_ssd1306_01/">picoでOLED（SSD1306）ことはじめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/04_pico_i2c_bus_scan/">picoでI2C bus scan</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/03_pico_study_tinyusb/">picoでusbを使用したシリアル通信</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/02_pico_new_project/">picoの新しいプロジェクト作成</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/pico/" title="pico">pico</a>
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/raspberry-pi/" title="Raspberry Pi">Raspberry Pi</a>
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/rust/" title="Rust">Rust</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 devcat.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="https://devcat.jp/js/menu.js"></script>
+<script src="https://devcat.jp/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

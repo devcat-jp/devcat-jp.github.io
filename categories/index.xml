@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on でぶねこ</title>
+    <link>https://devcat.jp/categories/</link>
+    <description>Recent content in Categories on でぶねこ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sat, 08 Jan 2022 11:24:11 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust</title>
+      <link>https://devcat.jp/categories/rust/</link>
+      <pubDate>Sat, 08 Jan 2022 11:24:11 +0900</pubDate>
+      
+      <guid>https://devcat.jp/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>電子工作</title>
+      <link>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Sun, 10 Oct 2021 11:24:11 +0900</pubDate>
+      
+      <guid>https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pico on でぶねこ</title>
+    <link>https://devcat.jp/tags/pico/</link>
+    <description>Recent content in pico on でぶねこ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 10 Oct 2021 11:24:11 +0900</lastBuildDate><atom:link href="https://devcat.jp/tags/pico/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>picoでOLED（SSD1306）ことはじめ</title>
+      <link>https://devcat.jp/post/05_pico_ssd1306_01/</link>
+      <pubDate>Sun, 10 Oct 2021 11:24:11 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/05_pico_ssd1306_01/</guid>
+      <description>SSD1306を使用したディスプレイの使用法を調査する</description>
+    </item>
+    
+    <item>
+      <title>picoでI2C bus scan</title>
+      <link>https://devcat.jp/post/04_pico_i2c_bus_scan/</link>
+      <pubDate>Mon, 27 Sep 2021 01:16:33 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/04_pico_i2c_bus_scan/</guid>
+      <description>I2C接続のOLEDディスプレイに表示をさせたい、まずは配線と認識できていることまでを実施する</description>
+    </item>
+    
+    <item>
+      <title>picoでusbを使用したシリアル通信</title>
+      <link>https://devcat.jp/post/03_pico_study_tinyusb/</link>
+      <pubDate>Sun, 26 Sep 2021 14:47:01 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/03_pico_study_tinyusb/</guid>
+      <description>usbを使用してPCと双方向通信を行う</description>
+    </item>
+    
+    <item>
+      <title>picoの新しいプロジェクト作成</title>
+      <link>https://devcat.jp/post/02_pico_new_project/</link>
+      <pubDate>Sun, 26 Sep 2021 11:00:53 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/02_pico_new_project/</guid>
+      <description>自分で用意したフォルダでpicoのプロジェクト作成する手法を整理</description>
+    </item>
+    
+    <item>
+      <title>picoのC/C&#43;&#43;開発環境構築</title>
+      <link>https://devcat.jp/post/01_pi_pico_devenv_wsl/</link>
+      <pubDate>Sun, 12 Sep 2021 15:31:32 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/01_pi_pico_devenv_wsl/</guid>
+      <description>WSL2_Ubuntu20.04を使用したpicoの開発環境構築とLチカサンプルの実行を行う</description>
+    </item>
+    
+  </channel>
+</rss>

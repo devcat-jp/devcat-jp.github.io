@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hugo使い方メモ - でぶねこ</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Hugo使い方メモ" />
+<meta property="og:description" content="使用するコマンドや小ネタを記録" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devcat.jp/post/00_test_post/" />
+<meta property="article:published_time" content="2021-09-12T13:59:18+09:00" />
+<meta property="article:modified_time" content="2021-09-12T13:59:18+09:00" />
+
+		<meta itemprop="name" content="Hugo使い方メモ">
+<meta itemprop="description" content="使用するコマンドや小ネタを記録">
+<meta itemprop="datePublished" content="2021-09-12T13:59:18+09:00" />
+<meta itemprop="dateModified" content="2021-09-12T13:59:18+09:00" />
+<meta itemprop="wordCount" content="15">
+
+
+
+<meta itemprop="keywords" content="" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="https://devcat.jp/css/style.css">
+	<link rel="stylesheet" href="https://devcat.jp/css/custom.css">
+
+	<link rel="shortcut icon" href="https://devcat.jp/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-X65QN85NGJ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="https://devcat.jp/" title="でぶねこ" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="https://devcat.jp/img/title.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">でぶねこ</div>
+					<div class="logo__tagline">アウトプットって大事だよね</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Hugo使い方メモ</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">devcat</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-09-12T13:59:18&#43;09:00">2021-09-12</time></div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用テーマ">使用テーマ</a></li>
+        <li><a href="#新規記事作成">新規記事作成</a></li>
+        <li><a href="#静的ページ作成">静的ページ作成</a></li>
+        <li><a href="#hugoサーバ立ち上げ">Hugoサーバ立ち上げ</a></li>
+        <li><a href="#画像貼り付け">画像貼り付け</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h3 id="使用テーマ">使用テーマ</h3>
+<pre><code>https://themes.gohugo.io/themes/github-style/#setup-readme
+</code></pre><h3 id="新規記事作成">新規記事作成</h3>
+<pre><code>$ hugo new post/title_of_the_post.md
+</code></pre><h3 id="静的ページ作成">静的ページ作成</h3>
+<pre><code>$ hugo
+</code></pre><h3 id="hugoサーバ立ち上げ">Hugoサーバ立ち上げ</h3>
+<pre><code>$hogo server
+</code></pre><h3 id="画像貼り付け">画像貼り付け</h3>
+<pre><code>https://hugo-de-blog.com/hugo-img/
+</code></pre>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="https://devcat.jp/post/01_pi_pico_devenv_wsl/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">picoのC/C&#43;&#43;開発環境構築</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://devcat.jp" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/06_rust_windows_setup/">WindowsでのRust開発環境構築</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/05_pico_ssd1306_01/">picoでOLED（SSD1306）ことはじめ</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/04_pico_i2c_bus_scan/">picoでI2C bus scan</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/03_pico_study_tinyusb/">picoでusbを使用したシリアル通信</a></li>
+			<li class="widget__item"><a class="widget__link" href="https://devcat.jp/post/02_pico_new_project/">picoの新しいプロジェクト作成</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/pico/" title="pico">pico</a>
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/raspberry-pi/" title="Raspberry Pi">Raspberry Pi</a>
+		<a class="widget-taglist__link widget__link btn" href="https://devcat.jp/tags/rust/" title="Rust">Rust</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 devcat.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="https://devcat.jp/js/menu.js"></script>
+<script src="https://devcat.jp/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
