@@ -6,7 +6,16 @@
     <description>Recent content in 電子工作 on でぶねこ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Sun, 19 Feb 2023 14:02:57 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 21:06:28 +0900</lastBuildDate><atom:link href="https://devcat.jp/categories/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>whisper.cppによる文字起こし</title>
+      <link>https://devcat.jp/post/09_pi_whisper_cpp/</link>
+      <pubDate>Thu, 23 Feb 2023 21:06:28 +0900</pubDate>
+      
+      <guid>https://devcat.jp/post/09_pi_whisper_cpp/</guid>
+      <description>ラズベリーパイでwhisper.cppによる録音ファイルの文字起こしを試してみる</description>
+    </item>
+    
     <item>
       <title>ラズパイでUSBマイクによる録音</title>
       <link>https://devcat.jp/post/08_pi_usb_mic/</link>
